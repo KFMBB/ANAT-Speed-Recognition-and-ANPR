@@ -403,8 +403,9 @@ class IntegratedVideoProcessor:
 
 def main():
     parser = argparse.ArgumentParser(description="Integrated Video Processor for Speed Detection and ANPR")
-    parser.add_argument('--config', type=str, required=True, help='Path to the configuration file')
+    parser.add_argument('--config', type=str, default='config/config.yaml', help='Path to the configuration file (default: config/config.yaml)')
     args = parser.parse_args()
+    config_path = args.config
 
     try:
         processor = IntegratedVideoProcessor(args.config)
